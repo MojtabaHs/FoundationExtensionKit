@@ -14,6 +14,10 @@ let package = Package(
         .library(
             name: "StringExtensionKit",
             targets: ["StringExtensionKit"]),
+
+        .library(
+            name: "JSONDecoderKit",
+            targets: ["StringExtensionKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,14 +28,25 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FoundationExtensionKit",
-            dependencies: ["StringExtensionKit"]),
+            dependencies: [
+                "StringExtensionKit",
+                "JSONDecoderKit"
+            ]),
 
         .target(
             name: "StringExtensionKit",
             dependencies: []),
 
+        .target(
+            name: "JSONDecoderKit",
+            dependencies: []),
+
         .testTarget(
             name: "StringExtensionKitTests",
             dependencies: ["StringExtensionKit"]),
+
+        .testTarget(
+            name: "JSONDecoderKitTests",
+            dependencies: ["JSONDecoderKit"]),
     ]
 )
