@@ -17,7 +17,7 @@ let package = Package(
 
         .library(
             name: "JSONDecoderKit",
-            targets: ["StringExtensionKit"]),
+            targets: ["JSONDecoderKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
