@@ -18,6 +18,10 @@ let package = Package(
         .library(
             name: "JSONDecoderKit",
             targets: ["JSONDecoderKit"]),
+
+        .library(
+            name: "OptionalExtensionKit",
+            targets: ["OptionalExtensionKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -33,20 +37,34 @@ let package = Package(
                 "JSONDecoderKit"
             ]),
 
-        .target(
-            name: "StringExtensionKit",
-            dependencies: []),
+        // MARK: - StringExtensionKit
 
         .target(
-            name: "JSONDecoderKit",
+            name: "StringExtensionKit",
             dependencies: []),
 
         .testTarget(
             name: "StringExtensionKitTests",
             dependencies: ["StringExtensionKit"]),
 
+        // MARK: - JSONDecoderKit
+
+        .target(
+            name: "JSONDecoderKit",
+            dependencies: []),
+
         .testTarget(
             name: "JSONDecoderKitTests",
             dependencies: ["JSONDecoderKit"]),
+
+        // MARK: - OptionalExtensionKit
+
+        .target(
+            name: "OptionalExtensionKit",
+            dependencies: []),
+
+        .testTarget(
+            name: "OptionalExtensionKitTests",
+            dependencies: ["OptionalExtensionKit"]),
     ]
 )
