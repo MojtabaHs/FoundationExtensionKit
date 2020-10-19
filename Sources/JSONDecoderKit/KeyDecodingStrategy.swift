@@ -21,11 +21,12 @@ public extension JSONDecoder.KeyDecodingStrategy {
     /// 2. Preserve all other letters.
     ///
     /// - Note: Using this key decoding strategy has a nominal performance cost, as each string key has to be inspected for the first letter.
+    /// - Note: If passing dictionary has no keys, this closure will not be called.
     ///
     /// - Complexity: O(1).
     static var convertFromUpperCamelCase: Self {
         .custom {
-            guard let key = $0.last else { fatalError("Keys should not be empty") }
+            let key = $0.last!
 
             let codingKeyType = type(of: key)
             let lowerCamelCased = key.stringValue.firstCharLowercased()

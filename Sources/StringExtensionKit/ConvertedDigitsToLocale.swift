@@ -26,14 +26,11 @@ public extension String {
         Self.formatter.locale = locale
         let maps: [(original: String, converted: String)] = digits.map {
             let original = String($0)
-            guard let digit = Self.formatter.number(from: String($0)) else {
-                assertionFailure("Can not convert to number from: \(original)")
-                return (original, original)
-            }
-            guard let localized = Self.formatter.string(from: digit) else {
-                assertionFailure("Can not convert to string from: \(digit)")
-                return (original, original)
-            }
+            // NumberFormatter can always create a number form decimalDigits characterSet. No need for check.
+            let digit = Self.formatter.number(from: String($0))!
+
+            // A digit that created from a string can always convert back to string. No need for check.
+            let localized = Self.formatter.string(from: digit)!
             return (original, localized)
         }
 

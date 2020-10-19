@@ -42,6 +42,8 @@ final class StringExtensionKitTests: XCTestCase {
         (input: "Hello ۰۱۲۳۴۵۶۷۸" , expectation: "Hello 012345678"),
         (input: "سلام ۰۱۲۳۴۵۶۷۸۹"  , expectation: "سلام 0123456789"),
         (input: "0000۰۰۰۰"        , expectation: "00000000"),
+        (input: "سلام"             , expectation: "سلام"),
+        (input: "Hello"           , expectation: "Hello"),
     ]
 
     func testConvertingAllDigitsToEnglish() {
@@ -60,7 +62,9 @@ final class StringExtensionKitTests: XCTestCase {
         (input: "Hello 0123456789" , expectation: "Hello ۰۱۲۳۴۵۶۷۸۹"),
         (input: "سلام ۰۱۲۳۴۵۶۷۸۹"    , expectation: "سلام ۰۱۲۳۴۵۶۷۸۹"),
         (input: "سلام 0123456789"    , expectation: "سلام ۰۱۲۳۴۵۶۷۸۹"),
-        (input: "0000۰۰۰۰"         , expectation: "۰۰۰۰۰۰۰۰"),
+        (input: "0000۰۰۰۰"          , expectation: "۰۰۰۰۰۰۰۰"),
+        (input: "سلام"               , expectation: "سلام"),
+        (input: "Hello"             , expectation: "Hello"),
     ]
 
     func testConvertingAllDigitsToPersian() {
