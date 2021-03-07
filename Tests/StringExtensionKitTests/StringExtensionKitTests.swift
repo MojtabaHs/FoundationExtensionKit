@@ -95,10 +95,17 @@ final class StringExtensionKitTests: XCTestCase {
         (initial: "سلام دنیا", prefix: "سلام", replacingWith: "خدا نگهدار", expectation: "خدا نگهدار دنیا"),
     ]
 
-
     func testRemovingPrefix() {
         for testCase in testCasesReplacingPrefix {
             let toTest = testCase.initial.replacing(prefix: testCase.prefix, with: testCase.replacingWith)
+            XCTAssertEqual(toTest, testCase.expectation)
+        }
+    }
+
+    func testRemovePrefix() {
+        for testCase in testCasesReplacingPrefix {
+            var toTest = testCase.initial
+            toTest.replace(prefix: testCase.prefix, with: testCase.replacingWith)
             XCTAssertEqual(toTest, testCase.expectation)
         }
     }
