@@ -34,7 +34,8 @@ let package = Package(
             name: "FoundationExtensionKit",
             dependencies: [
                 "StringExtensionKit",
-                "JSONDecoderKit"
+                "JSONDecoderKit",
+                "URLExtensionKit"
             ]),
 
         .target(
