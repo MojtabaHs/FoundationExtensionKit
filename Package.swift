@@ -12,12 +12,16 @@ let package = Package(
             targets: ["FoundationExtensionKit"]),
 
         .library(
+            name: "JSONDecoderKit",
+            targets: ["JSONDecoderKit"]),
+
+        .library(
             name: "StringExtensionKit",
             targets: ["StringExtensionKit"]),
 
         .library(
-            name: "JSONDecoderKit",
-            targets: ["JSONDecoderKit"]),
+            name: "URLExtensionKit",
+            targets: ["URLExtensionKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -34,11 +38,15 @@ let package = Package(
             ]),
 
         .target(
+            name: "JSONDecoderKit",
+            dependencies: []),
+
+        .target(
             name: "StringExtensionKit",
             dependencies: []),
 
         .target(
-            name: "JSONDecoderKit",
+            name: "URLExtensionKit",
             dependencies: []),
 
         .testTarget(

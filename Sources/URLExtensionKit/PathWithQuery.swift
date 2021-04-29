@@ -16,7 +16,7 @@ import Foundation
 public extension URL {
 
     /// Returns the path with all it's query items included.
-    public  var pathWithQuery: String {
+    public var pathWithQuery: String {
         guard let pathRange = components()?.rangeOfPath else { return "" }
         var result = absoluteString
         result.removeSubrange(absoluteString.startIndex...pathRange.lowerBound)
