@@ -24,6 +24,7 @@ public extension String {
         guard !digits.isEmpty else { return self }
 
         Self.formatter.locale = locale
+        /// Find all digits and build a map table for them.
         let maps: [(original: String, converted: String)] = digits.map {
             let original = String($0)
             // NumberFormatter can always create a number form decimalDigits characterSet. No need for check.
@@ -34,9 +35,9 @@ public extension String {
             return (original, localized)
         }
 
-        var converted = self
-        for map in maps { converted = converted.replacingOccurrences(of: map.original, with: map.converted) }
-        return converted
+        return maps.reduce(self) { converted, map in
+            converted.replacingOccurrences(of: map.original, with: map.converted)
+        }
     }
 
     /// Converts any digit in any language represented in the string and returns the converted string.
