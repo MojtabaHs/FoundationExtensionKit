@@ -12,7 +12,7 @@
 
 import Foundation
 
-extension TimeInterval {
+public extension TimeInterval {
     /// Creates a new `TimeInterval` representing the duration calculated from the given date components.
     ///
     /// - parameter components: A set of values to add to the date.
