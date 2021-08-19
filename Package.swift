@@ -22,6 +22,10 @@ let package = Package(
         .library(
             name: "URLExtensionKit",
             targets: ["URLExtensionKit"]),
+
+        .library(
+            name: "TimeIntervalExtensionKit",
+            targets: ["TimeIntervalExtensionKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -35,7 +39,8 @@ let package = Package(
             dependencies: [
                 "StringExtensionKit",
                 "JSONDecoderKit",
-                "URLExtensionKit"
+                "URLExtensionKit",
+                "TimeIntervalExtensionKit"
             ]),
 
         .target(
@@ -50,6 +55,10 @@ let package = Package(
             name: "URLExtensionKit",
             dependencies: []),
 
+        .target(
+            name: "TimeIntervalExtensionKit",
+            dependencies: []),
+
         .testTarget(
             name: "StringExtensionKitTests",
             dependencies: ["StringExtensionKit"]),
@@ -57,5 +66,9 @@ let package = Package(
         .testTarget(
             name: "JSONDecoderKitTests",
             dependencies: ["JSONDecoderKit"]),
+
+        .testTarget(
+            name: "TimeIntervalExtensionKitTests",
+            dependencies: ["TimeIntervalExtensionKit"]),
     ]
 )
