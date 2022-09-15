@@ -91,7 +91,7 @@ final class StringExtensionKitTests: XCTestCase {
             XCTAssertEqual(toTest, testCase.expectation)
         }
     }
-
+    
     ///
 
     var testCasesReplacingPrefix = [
@@ -110,6 +110,27 @@ final class StringExtensionKitTests: XCTestCase {
         for testCase in testCasesReplacingPrefix {
             var toTest = testCase.initial
             toTest.replace(prefix: testCase.prefix, with: testCase.replacingWith)
+            XCTAssertEqual(toTest, testCase.expectation)
+        }
+    }
+    
+    ///
+
+    var testCasesPrepending = [
+        (initial: "world", prefix: "Hello ", expectation: "Hello world"),
+    ]
+
+    func testPrepending() {
+        for testCase in testCasesPrepending {
+            let toTest = testCase.initial.prepending(testCase.prefix)
+            XCTAssertEqual(toTest, testCase.expectation)
+        }
+    }
+
+    func testPrependMutation() {
+        for testCase in testCasesPrepending {
+            var toTest = testCase.initial
+            toTest.prepend(testCase.prefix)
             XCTAssertEqual(toTest, testCase.expectation)
         }
     }

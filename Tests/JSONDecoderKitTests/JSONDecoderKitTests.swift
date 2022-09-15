@@ -21,6 +21,8 @@ final class JSONDecoderExtensionKitTests: XCTestCase {
         XCTAssertNoThrow(try jsonDecoder.decode(UpperCamelCase.self, from: json))
     }
     
+    ///
+    
     func testDecodeAnPascalKebabCaseKeyJSON() {
         let json = """
         {"Pascal-Kebab-Case": ""}
