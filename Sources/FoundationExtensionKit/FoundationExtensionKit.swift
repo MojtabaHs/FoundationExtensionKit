@@ -2,3 +2,4 @@
 @_exported import StringExtensionKit
 @_exported import URLExtensionKit
 @_exported import TimeIntervalExtensionKit
+@_exported import DataExtensionKit

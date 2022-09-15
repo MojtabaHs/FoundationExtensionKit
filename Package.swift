@@ -1,74 +1,80 @@
 // swift-tools-version:5.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "FoundationExtensionKit",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "FoundationExtensionKit",
-            targets: ["FoundationExtensionKit"]),
-
+            targets: ["FoundationExtensionKit"]
+        ),
         .library(
             name: "JSONDecoderKit",
-            targets: ["JSONDecoderKit"]),
-
+            targets: ["JSONDecoderKit"]
+        ),
         .library(
             name: "StringExtensionKit",
-            targets: ["StringExtensionKit"]),
-
+            targets: ["StringExtensionKit"]
+        ),
         .library(
             name: "URLExtensionKit",
-            targets: ["URLExtensionKit"]),
-
+            targets: ["URLExtensionKit"]
+        ),
         .library(
-            name: "TimeIntervalExtensionKit",
-            targets: ["TimeIntervalExtensionKit"]),
+            name: "DataExtensionKit",
+            targets: ["DataExtensionKit"]
+        ),
     ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
+    dependencies: [ ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FoundationExtensionKit",
             dependencies: [
                 "StringExtensionKit",
                 "JSONDecoderKit",
                 "URLExtensionKit",
-                "TimeIntervalExtensionKit"
-            ]),
-
+                "TimeIntervalExtensionKit",
+                "DataExtensionKit",
+            ]
+        ),
         .target(
             name: "JSONDecoderKit",
-            dependencies: []),
-
+            dependencies: []
+        ),
         .target(
             name: "StringExtensionKit",
-            dependencies: []),
-
+            dependencies: []
+        ),
         .target(
             name: "URLExtensionKit",
-            dependencies: []),
-
+            dependencies: []
+        ),
         .target(
             name: "TimeIntervalExtensionKit",
-            dependencies: []),
-
+            dependencies: []
+        ),
+        .target(
+            name: "DataExtensionKit",
+            dependencies: []
+        ),
+        
+        // MARK: - Test Targets
         .testTarget(
             name: "StringExtensionKitTests",
-            dependencies: ["StringExtensionKit"]),
-
+            dependencies: ["StringExtensionKit"]
+        ),
         .testTarget(
             name: "JSONDecoderKitTests",
-            dependencies: ["JSONDecoderKit"]),
-
+            dependencies: ["JSONDecoderKit"]
+        ),
         .testTarget(
             name: "TimeIntervalExtensionKitTests",
-            dependencies: ["TimeIntervalExtensionKit"]),
+            dependencies: ["TimeIntervalExtensionKit"]
+        ),
+        .testTarget(
+            name: "DataExtensionKitTests",
+            dependencies: ["DataExtensionKit"]
+        ),
     ]
 )
